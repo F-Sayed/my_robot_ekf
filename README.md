@@ -3,43 +3,43 @@
  
 **Node overview**
 
-**1.	Keyboard Teleop**
+**1. Keyboard Teleop**
 
-Takes in keyboard commands to control the robot’s movements.
- 
-**a.	Subscribes to**
+	The keyboard teleop node takes in keyboard commands to control the robot’s movements.
 
-  Keyboard commands (UIOJKLM,.) 
+	Subscribes to:
+	
+	Keyboard commands (UIOJKLM,.) 
 
-**b.	Publishes to**
+	Publishes to:
+	
+	/cmd_vel topic (geometry_msgs/Twist)
 
-  /cmd_vel topic (geometry_msgs/Twist)
-  
-**c.	Notes**
-
-None
+	--Notes--
+	
+	None
 
 
 **2.	base_controller**
 
-Translates movement messages to control the wheels of the robot.
+	Translates movement messages to control the wheels of the robot.
 
-**a.	Subscribes to**
+	Subscribes to:
+	
+	- /cmd_vel topic (geometry_msgs/Twist)
 
-  /cmd_vel topic (geometry_msgs/Twist)
-  
-  **b.	Publishes to**
-  
-  /encoder_values topic (std_msgs/String)
+	Publishes to
 
-  **c.	Notes**
+	- /encoder_values topic (std_msgs/String)
 
-  Need to convert linear velocity (x) and angular velocity (z) from cmd_vel to appropriate wheel speeds of the robot.
+	--Notes--
 
-  TODO: Need to change string message type to something more appropriate.
-  
+	Need to convert linear velocity (x) and angular velocity (z) from cmd_vel to appropriate wheel speeds of the robot.
 
-  **3.	imu_raw_publisher**
+	TODO: Need to change string message type to something more appropriate.
+
+
+**3.	imu_raw_publisher**
   
 Publishes raw IMU data as two messages, one for accelerometer and gyroscope values, another for magnetometer values.
 
