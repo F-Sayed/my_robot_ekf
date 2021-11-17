@@ -1,7 +1,7 @@
 # my_robot_software_stack
  EKF software stack for the DEWA R&D robot
  
-Node overview
+**Node overview**
 
 **1.	Keyboard Teleop**
 
@@ -16,6 +16,9 @@ Takes in keyboard commands to control the robot’s movements.
   /cmd_vel topic (geometry_msgs/Twist)
   
 **c.	Notes**
+
+None
+
 
 **2.	base_controller**
 
@@ -34,6 +37,7 @@ Translates movement messages to control the wheels of the robot.
   Need to convert linear velocity (x) and angular velocity (z) from cmd_vel to appropriate wheel speeds of the robot.
 
   TODO: Need to change string message type to something more appropriate.
+  
 
   **3.	imu_raw_publisher**
   
@@ -59,6 +63,7 @@ IMU message takes in linear acceleration (accelerometer) and angular velocity (g
 
 Since the IMU publishes digital data, we need to convert each sensor to analog data (e.g. unit G’s or m/s).
 
+
 **4.	ImuFilter**
 
 This node comes from the imu_filter_madgwick ROS package, which takes in raw IMU data (without orientation) and publishes a filtered IMU message (with orientation).
@@ -79,6 +84,7 @@ The subscribed topics have no information regarding the orientation of the robot
 
 As mentioned, the /imu/mag topic is used in this implementation, but is optional.
 
+
 **5.	odometry_publisher**
 
 Calculates robot translation and rotation based on given inputs such as wheel encoder readings or IMU data.
@@ -98,6 +104,7 @@ Calculates robot translation and rotation based on given inputs such as wheel en
 Translation are (currently) calculated using some preset measurements of the robot such as base length or wheel ticks per cycle, as well as encoder readings.
 
 Rotation can be calculated using either encoder readings (angular z axis), or the IMU readings.
+
 
 **6.	navsat_transform_node**
 
