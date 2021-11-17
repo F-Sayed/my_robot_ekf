@@ -1,5 +1,6 @@
 # my_robot_software_stack
  EKF software stack for the DEWA R&D robot
+ 
 Node overview
 
 **1.	Keyboard Teleop**
@@ -11,12 +12,15 @@ Takes in keyboard commands to control the robot’s movements.
   Keyboard commands (UIOJKLM,.) 
 
 **b.	Publishes to**
+
   /cmd_vel topic (geometry_msgs/Twist)
+  
 **c.	Notes**
 
 **2.	base_controller**
 
 Translates movement messages to control the wheels of the robot.
+
 **a.	Subscribes to**
 
   /cmd_vel topic (geometry_msgs/Twist)
