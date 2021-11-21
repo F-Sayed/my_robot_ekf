@@ -66,7 +66,8 @@
 
 ### **4. ImuFilter**
 
-	This node comes from the imu_filter_madgwick ROS package, which takes in raw IMU data (without orientation) and publishes a filtered IMU message (with orientation).
+	This node comes from the imu_filter_madgwick ROS package, which takes in raw IMU data (without orientation)
+	and publishes a filtered IMU message (with orientation).
 
 	**a.	Subscribes to**
 
@@ -80,7 +81,8 @@
 
 	**c.	Notes**
 
-	The subscribed topics have no information regarding the orientation of the robot, whereas the published topic’s message contains both the IMU readings as well as the orientation.
+	The subscribed topics have no information regarding the orientation of the robot, whereas the published 
+	topic’s message contains both the IMU readings as well as the orientation.
 
 	As mentioned, the /imu/mag topic is used in this implementation, but is optional.
 
@@ -101,14 +103,17 @@
 
 	**c.	Notes**
 
-	Translation are (currently) calculated using some preset measurements of the robot such as base length or wheel ticks per cycle, as well as encoder readings.
+	Translation are (currently) calculated using some preset measurements of the robot such as base length or
+	wheel ticks per cycle, as well as encoder readings.
 
 	Rotation can be calculated using either encoder readings (angular z axis), or the IMU readings.
 
 
 ### **6. navsat_transform_node**
 
-	This node comes from the robot_localization ROS package, which works in a (sort of) loop with the EKF node by taking in the predicted estimate of the robot odometry, IMU readings, and GPS readings to publish an odom message of the robots position consistent with the robot’s world frame.
+	This node comes from the [robot_localization](http://docs.ros.org/en/melodic/api/robot_localization/html/index.html) ROS package, which works in a (sort of) loop with the EKF node by taking in the
+	predicted estimate of the robot odometry, IMU readings, and GPS readings to publish an odom message of the robots position 
+	consistent with the robot’s world frame.
 
 	**a.	Subscribes to**
 
@@ -127,4 +132,4 @@
 	**c.	Notes**
 
 	This node works side-by-side with the EKF node (more below).
-
+### **7. **
