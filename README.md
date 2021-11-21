@@ -111,7 +111,7 @@
 
 ### **6. navsat_transform_node**
 
-	This node comes from the [robot_localization](http://docs.ros.org/en/melodic/api/robot_localization/html/index.html) ROS package, which works in a (sort of) loop with the EKF node by taking in the
+	This node comes from the ![robot_localization](http://docs.ros.org/en/melodic/api/robot_localization/html/index.html) ROS package, which works in a (sort of) loop with the EKF node by taking in the
 	predicted estimate of the robot odometry, IMU readings, and GPS readings to publish an odom message of the robots position 
 	consistent with the robot’s world frame.
 
