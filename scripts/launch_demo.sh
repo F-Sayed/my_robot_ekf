@@ -9,4 +9,4 @@ terminator -e "rosrun my_robot base_controller.py" &
 sleep 1
 terminator -e "rosrun imu_filter_madgwick imu_filter_node" & 
 sleep 1
-terminator -e "rosrun robot_localization "
+terminator -e "rosrun robot_localization my_ekf_launch.launch"
