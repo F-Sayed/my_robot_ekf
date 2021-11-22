@@ -1,6 +1,41 @@
 # my_robot_software_stack
  EKF software stack for the DEWA R&D robot
  
+ # **Setup**  
+ 
+  ## **Prerequisites**  
+  
+  This project is using ROS Kinetic (Catkin also required) on Ubuntu 16.  
+  
+  ## **Installation**
+  
+  ### 1. Create a catkin workspace
+  
+  ``source /opt/ros/kinetic/setup.bash``
+  
+  ``mkdir -p ~/catkin_ws/src/   ``
+  
+  ``cd ~/catkin_ws/``  
+
+ ### 2. Clone the repository into your catkin workspace's source folder  
+ 
+ ``cd ~/catkin_ws/src/``
+ 
+ ``git clone https://github.com/F-Sayed/my_robot_ekf``
+ 
+ ### 3. Compile the workspace
+ 
+ ``cd ~/catckin_ws``
+ 
+ ``catkin_make``
+ 
+ ## **Running the project**
+
+Make sure all scripts that are being used have the execute permission by using ``chmod +x example_name.py``.  
+
+``./catkin_ws/src/my_robot/scripts/launch_demo.sh``  
+
+ 
 # **Node overview**
 
 ## **1. Keyboard Teleop**
@@ -110,9 +145,23 @@ wheel ticks per cycle, as well as encoder readings.
 
 Rotation can be calculated using either encoder readings (angular z axis), or the IMU readings.  
 
+## **6. ublox_gps**
 
+This node comes from the [ublox](http://wiki.ros.org/ublox) ROS package, and is used to publish GPS messages using the GPS used in this robot.
 
-## **6. navsat_transform_node**
+## ** a. Subscribes to**
+
+None
+
+## ** b. Publishes to**
+
+/gps/fix topic (sensor_msgs/NavSatFix)
+
+## ** c. Notes**
+
+This node requires the [rtcm_msgs](https://index.ros.org/r/rtcm_msgs/) ROS package that is included in this repository.
+
+## **7. navsat_transform_node**
 
 This node comes from the [robot_localization](http://docs.ros.org/en/melodic/api/robot_localization/html/index.html) ROS package, which works in a (sort of) loop with the EKF node by taking in the
 predicted estimate of the robot odometry, IMU readings, and GPS readings to publish an odom message of the robots position 
@@ -137,7 +186,7 @@ Optional: /gps/filtered topic (sensor_msgs/NavSatFix)
 This node works side-by-side with the EKF node (more below).  
 
 
-## **7. ekf_localization_node**
+## **8. ekf_localization_node**
 
 This node comes from the [robot_localization](http://docs.ros.org/en/melodic/api/robot_localization/html/index.html) ROS package. 
 The ekf_localization_node is an implementation of an extended Kalman filter. It uses an omnidirectional motion model to project 
