@@ -50,7 +50,7 @@ The keyboard teleop node takes in keyboard commands to control the robot’s mov
 
 + /cmd_vel topic (geometry_msgs/Twist)
 
-**--Notes--**
+**c. Notes**
 
 + None
 
@@ -67,7 +67,7 @@ Translates movement messages to control the wheels of the robot.
 
 + /encoder_values topic (std_msgs/String)
 
-**--Notes--**
+**c. Notes**
 
 + Need to convert linear velocity (x) and angular velocity (z) from cmd_vel to appropriate wheel speeds of the robot.
 
