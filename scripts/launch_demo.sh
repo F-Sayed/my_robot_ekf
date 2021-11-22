@@ -7,4 +7,6 @@ terminator -e "rosrun my_robot imu_pub.py" &
 sleep 1
 terminator -e "rosrun my_robot base_controller.py" &
 sleep 1
-terminator -e "rosrun imu_filter_madgwick imu_filter_node" 
+terminator -e "rosrun imu_filter_madgwick imu_filter_node" & 
+sleep 1
+terminator -e "rosrun robot_localization "
