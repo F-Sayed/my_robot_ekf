@@ -25,7 +25,7 @@
  
  ### 3. Compile the workspace
  
- ``cd ~/catckin_ws``
+ ``cd ~/catkin_ws``
  
  ``catkin_make``
  
