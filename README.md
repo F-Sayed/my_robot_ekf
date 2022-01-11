@@ -149,15 +149,15 @@ wheel ticks per cycle, as well as encoder readings.
 
 + This node comes from the [ublox](http://wiki.ros.org/ublox) ROS package, and is used to publish GPS messages using the GPS used in this robot.
 
-** a. Subscribes to**
+**a. Subscribes to**
 
 + None
 
-** b. Publishes to**
+**b. Publishes to**
 
 + /gps/fix topic (sensor_msgs/NavSatFix)
 
-** c. Notes**
+**c. Notes**
 
 + This node requires the [rtcm_msgs](https://index.ros.org/r/rtcm_msgs/) ROS package that is included in this repository.
 
